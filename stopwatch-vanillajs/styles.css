@@ -1,0 +1,57 @@
+body {
+    overflow: hidden;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh; 
+}
+
+#stopwatch {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: grid;
+    grid-template-areas: 
+        "title title title"
+        "time time time"
+        "start stop reset";
+    justify-content: center;
+    align-content: center;
+    grid-column-gap: 12px;
+}
+
+h1 {
+    grid-area: title;
+    margin: -20px 0 0 0;
+}
+
+#timer {
+    grid-area: time;
+    margin: 12px;
+    font-size: 30px;
+}
+
+#start-button {
+    grid-area: start;
+}
+
+#sto-button {
+    grid-area: stop;
+}
+
+#reset-button {
+    grid-area: reset;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:disabled:hover {
+    cursor: unset;
+}
