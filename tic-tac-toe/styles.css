@@ -1,67 +1,46 @@
-*, *::after, *::before {
-    box-sizing: border-box;
-}
-
 body {
-    margin: 0;
-}
-
-:root {
-    --cell-size: 100px;
-    --mark-size: calc(var(var(--cell-size)) * .9);
-}
-
-.board {
     width: 100vw;
-    height: 100vh;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: repeat(3, auto);
-}
-
-.cell {
-    width: var(--cell-size);
-    height: var(--cell-size);
-    border: 1px solid black;
+    aspect-ratio: 1;
+    overflow: hidden;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5rem;
 }
 
-.cell:first-child,
-.cell:nth-child(2),
-.cell:nth-child(3) {
-    border-top: none;
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    width: 50%;
+    height: 50%;
 }
 
-.cell:nth-child(3n + 1) {
-    border-left: none;
+
+.hidden {
+    display: none;
 }
 
-.cell:nth-child(3n + 3) {
-    border-right: none;
+.X:after {
+    content: '❌';
+    font-size: 4rem;
 }
 
-.cell:last-child,
-.cell:nth-child(8),
-.cell:nth-child(7) {
-    border-bottom: none;
+.O:after {
+    content: '⭕️';
+    font-size: 4rem;
 }
 
-.x::before {
-    content: "X";
-    font-size: 3rem;
-}
-
-.o::before {
-    content: "O";
-    font-size: 3rem;
-}
-
-.cell.x,
-.cell.o {
+.cell:disabled:hover {
     cursor: not-allowed;
+}
+
+.cell:not(:disabled):hover {
+    cursor: pointer
+}
+
+h1, h2 {
+    margin-bottom: -5%;
 }
