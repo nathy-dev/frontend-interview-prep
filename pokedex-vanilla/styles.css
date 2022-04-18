@@ -50,11 +50,32 @@ button:disabled {
     cursor: not-allowed;
 }
 
-.search-results {
+#search-results {
     list-style: none;
+
+}
+
+ul {
+    list-style: none;
+    background-color: white;
     width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 2rem;
+    border-radius: var(--radius);
+
+}
+
+.list-item {
+    width: 100%;
+    background-color: white;
+}
+
+.no-results {
+    width: 75%;
+    border-radius: var(--radius);
+    text-align: center;
+    background-color: white;
 }
