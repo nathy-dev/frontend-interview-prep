@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Data Checking</title>
+        <meta charset='utf-8'>
+    </head>
+    <body>
+        <form>
+            <input name="person.name.first" value="John" />
+            <input name="person.name.last" value="Buttington" />
+            <input name="person.address.line1" value="" />
+            <input name="person.address.line2" value="new york" />
+        </form>
+    </body>
+    <script>
+        function convertForm(){
+            const inputs = document.querySelectorAll('input');
+            let obj = {};
+            inputs.forEach(input => {
+                let name = input.name;
+                let keys = name.split(".");
+                let currKey = '';
+                let newObj = obj;
+                for(let i = 0; i < keys.length - 1; i++) {
+                    currKey = keys[i];
+                    if(!newObj[currKey]) {
+                        newObj[currKey] = {};
+                    }
+                    newObj = newObj[currKey];
+                }
+                currKey = keys[keys.length - 1];
+                newObj[currKey] = input.value ? input.value : '';
+            })
+            console.log(obj)
+           
+        }
+        convertForm();
+    </script>
+</html>
