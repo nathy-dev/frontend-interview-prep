@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.tabs {
+    width: 75%;
+    height: 50vh;
+    border: 1px solid darkslategray;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tabs__content {
+    margin: 1rem 3rem;
+}
+
+.tabs__nav {
+    width: 100%;
+    border-bottom: 1px solid darkslategray;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    height: 3rem;
+    width: 8rem;
+    background-color: white;
+    border: 0;
+}
+
+button:not(.active):hover {
+    box-shadow: 0 .1rem lightblue;
+}
+
+.active {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    box-shadow: 0 .2rem lightblue, 0 .25rem lightskyblue;
+}
+
+.inactive {
+    display: none;
+}
+
+p {
+    font-size: 2rem;
+}
